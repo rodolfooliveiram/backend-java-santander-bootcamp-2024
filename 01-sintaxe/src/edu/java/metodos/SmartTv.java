@@ -11,9 +11,9 @@ package edu.java.metodos;
 
 public class SmartTv {
 	
-	public boolean ligada = false;
-	public int canal = 7;
-	public int volume = 15;
+	public boolean ligada;
+	public int canal;
+	public int volume;
 	
 	/**
 	 * Método para ligar a TV.
