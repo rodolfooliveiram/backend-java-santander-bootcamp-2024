@@ -7,8 +7,7 @@ public class ControleSimplesDeSaques {
 	public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in); 
 
-        double limiteDiario = scanner.nextDouble();
-   
+        double limiteDiario = scanner.nextDouble();   
         
         for(int i = 0; i < limiteDiario; i++) {
         	double saque = scanner.nextDouble();
@@ -25,18 +24,6 @@ public class ControleSimplesDeSaques {
         			break;
         		}
         	}
-        	
-//        	if(saque > 0) {
-//        		if(saque <= limiteDiario) {
-//        			limiteDiario -= saque;
-//        			System.out.println("Saque realizado. Limite restante: " + limiteDiario);
-//        		} else {
-//        			System.out.println("Limite diario de saque atingido. Transacoes encerradas.");
-//        		}
-//        	} else {
-//        		i = (int) limiteDiario;
-//        		System.out.println("Transacoes encerradas.");
-//        	}
         }
         
         scanner.close(); 

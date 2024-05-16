@@ -40,7 +40,7 @@ public class ContaTerminal {
 		System.out.println("E o seu saldo no valor de R$ " + String.format("%.2f", conta.saldo) + " já está disponível para saque.");
 		System.out.println("\nObrigado por se tornar um cliente DIO Bank!");
 		
-
+		scanner.close();
 	}
 
 }
