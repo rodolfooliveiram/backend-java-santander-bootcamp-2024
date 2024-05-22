@@ -5,7 +5,11 @@ import java.util.List;
 
 public class CarrinhoDeCompras {
 	
-	List<Item> meuCarrinho = new ArrayList<>();
+	List<Item> meuCarrinho;
+	
+	public CarrinhoDeCompras() {
+		this.meuCarrinho = new ArrayList<>();
+	}
 	
 	public void adicionarItem(String nome, double preco, int quantidade) {
 		meuCarrinho.add(new Item(nome, preco, quantidade));
@@ -14,27 +18,42 @@ public class CarrinhoDeCompras {
 	public void removerItem(String nome) {
 		List<Item> itemsParaRemocao = new ArrayList<>();
 		
-		for(Item i : meuCarrinho) {
-			if(i.getNome().equalsIgnoreCase(nome)) {
-				itemsParaRemocao.add(i);
+		if(!meuCarrinho.isEmpty()) {
+			for(Item i : meuCarrinho) {
+				if(i.getNome().equalsIgnoreCase(nome)) {
+					itemsParaRemocao.add(i);
+				}
 			}
+			
+			meuCarrinho.removeAll(itemsParaRemocao);
+			
+		} else {
+			System.out.println("Não foi possível remover itens pois seu carrinho está vazio!");
 		}
-		
-		meuCarrinho.removeAll(itemsParaRemocao);
 	}
 	
 	public void calcularValorTotal() {
 		double total = 0;
 		
-		for(Item i : meuCarrinho) {
-			total += i.getPreco();
+		if(!meuCarrinho.isEmpty()) {
+			for(Item i : meuCarrinho) {
+				double totalItem = i.getPreco() * i.getQuantidade();
+				total += totalItem;
+			}
+			
+			System.out.println("Valor Total: R$ " + total);
+			
+		} else {
+			System.out.println("Não foi possível calcular o valor total pois seu carrinho está vazio!");
 		}
-		
-		System.out.println("Valor Total: R$ " + total);
 	}
 	
 	public void exibirItens() {
-		System.out.println(meuCarrinho);
+		if(!meuCarrinho.isEmpty()) {
+			System.out.println(meuCarrinho);			
+		} else {
+			System.out.println("Seu carrinho está vazio!");
+		}
 	}
 	
 	
