@@ -2,6 +2,7 @@ package edu.java.poo.collections.list;
 import edu.java.poo.collections.list.carrinhodecompras.CarrinhoDeCompras;
 import edu.java.poo.collections.list.catalogodelivros.CatalogoLivros;
 import edu.java.poo.collections.list.listadetarefas.ListaTarefas;
+import edu.java.poo.collections.list.ordenacaodenumeros.OrdenacaoNumeros;
 import edu.java.poo.collections.list.ordenacaodepessoas.OrdenacaoPessoas;
 import edu.java.poo.collections.list.somanumeros.SomaNumeros;
 
@@ -76,6 +77,21 @@ public class MainList {
 		
 		System.out.println(listaPessoas.ordenarPorIdade());
 		System.out.println(listaPessoas.ordenarPorAltura());
+		
+		
+		// Ordenação de Números
+		OrdenacaoNumeros listaNumeros = new OrdenacaoNumeros();
+		
+		listaNumeros.adicionarNumero(2);
+		listaNumeros.adicionarNumero(6);
+		listaNumeros.adicionarNumero(20);
+		listaNumeros.adicionarNumero(4);
+		listaNumeros.adicionarNumero(8);
+		
+		System.out.println(listaNumeros.getListaNumeros());
+		System.out.println(listaNumeros.ordenarAscendente());
+		System.out.println(listaNumeros.ordenarDescendente());
+		
 	}
 
 }
