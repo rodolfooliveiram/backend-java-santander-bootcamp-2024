@@ -1,9 +1,11 @@
 package edu.java.poo.collections.map;
 
 import edu.java.poo.collections.map.agendadecontatos.AgendaContatos;
+import edu.java.poo.collections.map.agendadeeventos.AgendaEventos;
 import edu.java.poo.collections.map.contagemdepalavras.ContagemPalavras;
 import edu.java.poo.collections.map.dicionario.Dicionario;
 import edu.java.poo.collections.map.estoquedeprodutos.EstoqueProdutos;
+import edu.java.poo.collections.map.livrariaonline.LivrariaOnline;
 
 public class MainMap {
 
@@ -72,6 +74,36 @@ public class MainMap {
 		
 		contadorPalavras.removerPalavra("Classe");
 		contadorPalavras.exibirContagemPalavras();
+		
+		
+		AgendaEventos meusEventos = new AgendaEventos();
+		
+		meusEventos.adicionarEvento(19, 10, 2024, "Knotfest Brasil", "Slipknot");		
+		meusEventos.adicionarEvento(16, 06, 2024, "House of Dragons 2a Temporada", "House Targaryen");
+		meusEventos.adicionarEvento(21, 10, 2023, "Aniversário do Rodolfo", "Rodolfo");
+		
+		meusEventos.exibirAgenda();
+		meusEventos.obterProximoEvento();
+		
+		
+		LivrariaOnline livraria = new LivrariaOnline();
+		
+		livraria.adicionarLivro("https://a.co/d/g47hMjo", "Duna: Livro 1", "Frank Herbert", 78.0d);
+		livraria.adicionarLivro("https://a.co/d/9JNOZxS", "Senhor dos Aneis: A Sociedade do Anel", "J.R.R. Tolkien", 62.0d);
+		livraria.adicionarLivro("https://a.co/d/fs0RIpf", "Senhor dos Aneis: As Duas Torres", "J.R.R. Tolkien", 48.90d);
+		livraria.adicionarLivro("https://a.co/d/6CEKUDF", "Senhor dos Aneis: O Retorno do Rei", "J.R.R. Tolkien", 52.90d);
+		livraria.adicionarLivro("https://a.co/d/0QkPRw4", "A Educação da Vontade", "Jules Payot", 44.90d);
+		
+		livraria.exibirLivros();	
+		
+		System.out.println(livraria.exibirLivrosOrdenadosPorPreco());
+		System.out.println(livraria.exibirLivrosOrdenadosPorTitulo());
+		System.out.println(livraria.pesquisarLivrosPorAutor("J.R.R. Tolkien"));
+		System.out.println(livraria.obterLivroMaisCaro());
+		System.out.println(livraria.obterLivroMaisBarato());
+		
+		livraria.removerLivro("A Educação da Vontade");
+		livraria.exibirLivros();
 		
 	}
 }
