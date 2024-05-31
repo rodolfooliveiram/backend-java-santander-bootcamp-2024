@@ -1,7 +1,6 @@
 package edu.java.poo.collections.list.ordenacaodenumeros;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
