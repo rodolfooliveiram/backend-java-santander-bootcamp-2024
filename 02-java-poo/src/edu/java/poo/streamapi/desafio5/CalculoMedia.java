@@ -16,7 +16,7 @@ public class CalculoMedia {
 				.average()
 				.orElseThrow(() -> new NoSuchElementException("Não foi possível calcular a média."));
 
-		System.out.println(media);
+		System.out.println("Média dos números maiores que 5: " + media);
 	}
 
 }
